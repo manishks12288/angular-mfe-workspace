@@ -1,0 +1,108 @@
+ <div class="space-y-6">
+      <h2 class="text-3xl font-bold text-gray-900">🛒 Shopping Cart</h2>
+      
+      <!-- Empty Cart -->
+      <div *ngIf="cartCount() === 0" class="text-center py-16 bg-white rounded-xl shadow-md">
+        <div class="text-6xl mb-4">🛒</div>
+        <p class="text-xl text-gray-600 mb-6">Your cart is empty</p>
+        <a 
+          routerLink="/products"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+        >
+          Continue Shopping
+        </a>
+      </div>
+      
+      <!-- Cart Items -->
+      <div *ngIf="cartCount() > 0" class="space-y-6">
+        <!-- Items List -->
+        <div class="space-y-4">
+          <div 
+            *ngFor="let item of cartItems()" 
+            class="bg-white rounded-xl shadow-md p-6 flex flex-col md:flex-row gap-6 hover:shadow-lg transition-shadow"
+          >
+            <!-- Item Info -->
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">
+                {{ item.product.name }}
+              </h3>
+              <p class="text-gray-600 mb-3">
+                {{ item.product.description }}
+              </p>
+              <p class="text-2xl font-bold text-blue-600">
+                \${{ item.product.price }}
+                <span class="text-sm text-gray-500 font-normal">each</span>
+              </p>
+            </div>
+            
+            <!-- Controls -->
+            <div class="flex flex-col items-end gap-4">
+              <!-- Quantity Controls -->
+              <div class="flex items-center gap-3 bg-gray-100 rounded-lg p-2">
+                <button 
+                  (click)="decreaseQuantity(item.product.id, item.quantity)"
+                  class="w-8 h-8 bg-white hover:bg-gray-200 rounded-lg font-bold text-gray-700 transition-colors"
+                >
+                  −
+                </button>
+                <span class="w-12 text-center font-semibold text-lg">
+                  {{ item.quantity }}
+                </span>
+                <button 
+                  (click)="increaseQuantity(item.product.id, item.quantity)"
+                  class="w-8 h-8 bg-white hover:bg-gray-200 rounded-lg font-bold text-gray-700 transition-colors"
+                >
+                  +
+                </button>
+              </div>
+              
+              <!-- Subtotal -->
+              <div class="text-right">
+                <p class="text-sm text-gray-600">Subtotal</p>
+                <p class="text-2xl font-bold text-blue-600">
+                  \${{ item.product.price * item.quantity }}
+                </p>
+              </div>
+              
+              <!-- Remove Button -->
+              <button 
+                (click)="removeItem(item.product.id)"
+                class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-colors"
+              >
+                🗑️ Remove
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cart Summary -->
+        <div class="bg-white rounded-xl shadow-md p-6 space-y-4">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Order Summary</h3>
+          
+          <div class="flex justify-between text-lg">
+            <span class="text-gray-600">Total Items:</span>
+            <span class="font-semibold">{{ cartCount() }}</span>
+          </div>
+          
+          <div class="border-t pt-4 flex justify-between text-2xl">
+            <span class="font-bold text-gray-900">Total Price:</span>
+            <span class="font-bold text-blue-600">\${{ cartTotal() }}</span>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <button 
+              (click)="clearAllItems()"
+              class="flex-1 px-6 py-3 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors"
+            >
+              Clear Cart
+            </button>
+            <button 
+              class="flex-1 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors"
+            >
+              Proceed to Checkout →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

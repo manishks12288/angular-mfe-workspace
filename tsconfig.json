@@ -1,0 +1,89 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "shared-data-access": [
+        "./dist/shared-data-access"
+      ],
+      "shared-models": [
+        "./dist/shared-models"
+      ],
+      "shared-store": [
+        "./dist/shared-store"
+      ],
+      "shared-ui": [
+        "./dist/shared-ui"
+      ]
+    },
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve"
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/host/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/host/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/products/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/products/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/orders/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/orders/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/users/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/users/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/shared-ui/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/shared-ui/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/shared-models/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/shared-models/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/shared-data-access/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/shared-data-access/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/shared-store/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/shared-store/tsconfig.spec.json"
+    }
+  ]
+}

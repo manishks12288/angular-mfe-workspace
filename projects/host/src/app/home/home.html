@@ -1,0 +1,86 @@
+<div class="space-y-8">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">
+          Welcome to Micro-Frontend Dashboard
+        </h1>
+        <p class="text-xl text-gray-600">
+          Select a module to explore
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Products Card -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-8 border border-gray-200">
+          <div class="text-4xl mb-4">📦</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Products</h3>
+          <p class="text-gray-600 mb-6">Browse and manage products</p>
+          <a 
+            routerLink="/products"
+            class="inline-block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors"
+          >
+            View Products
+          </a>
+        </div>
+        
+        <!-- Orders Card -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-8 border border-gray-200">
+          <div class="text-4xl mb-4">📋</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Orders</h3>
+          <p class="text-gray-600 mb-6">Track and manage orders</p>
+          <a 
+            routerLink="/orders"
+            class="inline-block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors"
+          >
+            View Orders
+          </a>
+        </div>
+        
+        <!-- Cart Card -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-8 border border-gray-200">
+          <div class="text-4xl mb-4">🛒</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Shopping Cart</h3>
+          <p class="text-gray-600 mb-6">Review your cart items</p>
+          <a 
+            routerLink="/cart"
+            class="inline-block w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg text-center transition-colors"
+          >
+            View Cart
+          </a>
+        </div>
+      </div>
+      
+      <!-- Features Section -->
+      <div class="bg-blue-50 rounded-xl p-8 border border-blue-200">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Architecture Highlights</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">🔥</span>
+            <div>
+              <h3 class="font-semibold text-gray-900">Native Federation</h3>
+              <p class="text-gray-600 text-sm">Dynamic module loading</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">⚡</span>
+            <div>
+              <h3 class="font-semibold text-gray-900">Signals (Angular 21)</h3>
+              <p class="text-gray-600 text-sm">Local state management</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">🗄️</span>
+            <div>
+              <h3 class="font-semibold text-gray-900">NgRx Store</h3>
+              <p class="text-gray-600 text-sm">Global state management</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">🎨</span>
+            <div>
+              <h3 class="font-semibold text-gray-900">Tailwind CSS</h3>
+              <p class="text-gray-600 text-sm">Utility-first styling</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
